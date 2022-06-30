@@ -1,5 +1,6 @@
 import requests
 
+from configs.browser_config import url_dict
 from framework.logger.logger import Logger
 
 logger = Logger()
@@ -28,8 +29,7 @@ class MyRequests:
 
     @staticmethod
     def _send(url: str, data: dict, headers: dict, cookies: dict, method: str):
-
-        url = f"https://playground.learnqa.ru/api/{url}"
+        url = f'{url_dict["base_url"]}{url}'
         if method == "GET":
             response = requests.get(url, params=data, headers=headers, cookies=cookies)
         elif method in ("POST", "PUT", "DELETE", "PATCH"):
