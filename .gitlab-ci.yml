@@ -12,7 +12,7 @@ docker_job: # Название job
   before_script:
     - pip install -r requirements.txt # Устанавливаем пакеты в поднятом контейнере перед запуском самих тестов
   script:
-    - pytest -n=4 --alluredir=./allure-results tests/test_dog_api.py # Запускаем тесты указав папку с результатами тестов через --alluredir=
+    - pytest --alluredir=./allure-results tests/test_dog_api.py # Запускаем тесты указав папку с результатами тестов через --alluredir=
   allow_failure: true # Это позволит нам продолжить выполнение пайплайна в случае, если тесты упали.
   artifacts: # Сущность, с помощью которой, мы сохраним результат тестирования.
     when: always # Сохранять всегда
