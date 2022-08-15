@@ -12,3 +12,7 @@ def test_api_requests():
 @allure.description("Test_test_2")
 def test_2():
     assert True
+
+@allure.description("Test_test_3")
+def test_3():
+    assert False
