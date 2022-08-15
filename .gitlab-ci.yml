@@ -28,9 +28,6 @@ history_job: # Название job
   script:
     - 'curl --location --output artifacts.zip "https://gitlab.com/api/v4/projects/38594214/jobs/artifacts/master/download?job=docker_job&job_token=$CI_JOB_TOKEN"'  # С помощью api гитлаба скачиваем файлы из job, который будет указан ниже. Обратите внимание на текст на русском в ссылке. Очень важно указать вместо текста и скобок номер вашего репозиториия
     # Образ, используемый в этом шаге по умолчанию не имеет утилиты unzip, по этой причине мы добавляем её в контейнер
-    - apk add unzip
-    - chmod -R 777 public
-    - cp -r ./public/history ./allure-results # Копируем историю в папку с результатами теста
   allow_failure: true # Так как при первом запуске пайплайна истории нет, это позволит нам избежать падения пайплайна. В дальнейшем эту строчку можно спокойно удалить.
   artifacts:
     paths:
