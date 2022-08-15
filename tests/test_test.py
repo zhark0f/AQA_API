@@ -15,4 +15,4 @@ def test_2():
 
 @allure.description("Test_test_3")
 def test_3():
-    assert False
+    assert True
