@@ -19,6 +19,7 @@ docker_job: # Название job
   image: python:3.10.0-alpine # Нужно указать образ, который будет использоваться для запуска тестов.
   before_script:
     - pip install -r requirements.txt # Устанавливаем пакеты в поднятом контейнере перед запуском самих тестов
+    - black ./tests
   script:
     - pytest -n=$PROCESS -v -s -k "test_${TEST_NAME}" --alluredir=./allure-results # Запускаем тесты указав папку с результатами тестов через --alluredir=
   allow_failure: true # Это позволит нам продолжить выполнение пайплайна в случае, если тесты упали.
