@@ -20,6 +20,7 @@ format-black:
     entrypoint: ["/bin/ash", "-c"]
   script:
     - python3 -m black --check --diff ./tests/
+  allow_failure: False
 
 docker_job: # Название job
   stage: testing # Первый stage, который нужно выполнить
