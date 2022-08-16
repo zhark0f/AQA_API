@@ -9,9 +9,11 @@ def test_api_requests():
     print(response.json())
     print("actual message: this is true!!!!")
 
+
 @allure.description("Test_test_2")
 def test_2():
     assert True
+
 
 @allure.description("Test_test_3")
 def test_3():
