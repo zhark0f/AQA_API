@@ -5,4 +5,5 @@ pytest==7.1.2
 requests==2.27.1
 allure-pytest==2.9.45
 allure-python-commons==2.9.45
+pytest-xdist==2.5.0
 
