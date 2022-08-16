@@ -19,7 +19,7 @@ format-black:
     name: cytopia/black
     entrypoint: ["/bin/ash", "-c"]
   script:
-    - python3 -m black --check --diff .tests/
+    - python3 -m black --check --diff .
 
 docker_job: # Название job
   stage: testing # Первый stage, который нужно выполнить
