@@ -12,13 +12,14 @@ variables:  # Переменные
   PROCESS:
     value: "1"
     description: "Количество потоков"
+    
 format-black:
   stage: format
   image:
     name: cytopia/black
     entrypoint: ["/bin/ash", "-c"]
   script:
-    - python3 -m black .\tests\
+    - python3 -m black --check --diff .tests/
 
 docker_job: # Название job
   stage: testing # Первый stage, который нужно выполнить
